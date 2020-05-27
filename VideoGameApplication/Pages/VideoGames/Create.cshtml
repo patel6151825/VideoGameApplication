@@ -1,0 +1,50 @@
+﻿@page
+@model VideoGameApplication.Pages.VideoGames.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>VideoGame</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VideoGame.Title" class="control-label"></label>
+                <input asp-for="VideoGame.Title" class="form-control" />
+                <span asp-validation-for="VideoGame.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.PublicationYear" class="control-label"></label>
+                <input asp-for="VideoGame.PublicationYear" class="form-control" />
+                <span asp-validation-for="VideoGame.PublicationYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.MinimumPlayers" class="control-label"></label>
+                <input asp-for="VideoGame.MinimumPlayers" class="form-control" />
+                <span asp-validation-for="VideoGame.MinimumPlayers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.MaximumPlayers" class="control-label"></label>
+                <input asp-for="VideoGame.MaximumPlayers" class="form-control" />
+                <span asp-validation-for="VideoGame.MaximumPlayers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
